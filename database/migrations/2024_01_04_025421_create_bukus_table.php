@@ -8,23 +8,28 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * @return void
      */
-    public function up(): void
+    public function up()
     {
         Schema::create('buku', function (Blueprint $table) {
-            $table->uuid('BukuID')->primary();
-            $table->string('Judul');
-            $table->string('Penulis');
-            $table->string('Penerbit');
-            $table->integer('TahunTerbit');
+            $table->id();
+            $table->string('judul');
+            $table->string('penulis');
+            $table->string('penerbit');
+            $table->year('tahun_terbit');
+            $table->text('sinopsis')->nullable();
             $table->timestamps();
         });
     }
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
         Schema::dropIfExists('buku');
     }
