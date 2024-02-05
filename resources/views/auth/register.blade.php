@@ -28,7 +28,7 @@
         <form action="{{ route('register') }}" method="post">
           @csrf
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Full name" name="name">
+            <input type="text" value="{{Session::get('username')}}" class="form-control" name="username" placeholder="Username" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -36,7 +36,23 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="email" class="form-control" placeholder="Email" name="email">
+            <input type="text" value="{{Session::get('nama_lengkap')}}" class="form-control" name="nama_lengkap" placeholder="Nama Lengkap" >
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="text" value="{{Session::get('alamat')}}" class="form-control" name="alamat" placeholder="Alamat" >
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-user"></span>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-3">
+            <input type="email" value="{{session::get('email')}}" class="form-control" name="email" placeholder="Email" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-envelope"></span>
@@ -44,7 +60,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Password" name="password">
+            <input type="password" class="form-control" name="password" placeholder="Password" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
@@ -52,7 +68,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Retype password" name="password_confirmation">
+            <input type="password" class="form-control" name="password_confirmation" placeholder="Retype password" >
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>
