@@ -10,7 +10,7 @@ class UserController extends Controller
     public function index()
     {
         $users = User::all();
-        return view('users.index', compact('users'));
+        return view('admin.users', compact('users'));
     }
 
     public function create()
@@ -20,8 +20,8 @@ class UserController extends Controller
 
     public function store(Request $request)
     {
-        $user = User::create($request->all());
-        return redirect()->route('users.index');
+        $user = user::create($request->all());
+        return redirect()->route('admin.users');
     }
 
     public function edit(User $user)
