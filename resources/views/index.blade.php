@@ -33,12 +33,9 @@
                             </ul>
                         </li>
                     </ul>
-                    <form class="d-flex">
-                        <button class="btn btn-outline-dark" type="submit">
-                            <i class="bi-cart-fill me-1"></i>
-                            Cart
-                            <span class="badge bg-dark text-white ms-1 rounded-pill">0</span>
-                        </button>
+                    <form class="d-flex" action="{{ route('logout') }}" method="POST">
+                        @csrf <!-- Ini untuk menambahkan token CSRF -->
+                        <button class="btn btn-light ms-3">Logout</button>
                     </form>
                 </div>
             </div>
@@ -47,8 +44,8 @@
         <header class="bg-dark py-5">
             <div class="container px-4 px-lg-5 my-5">
                 <div class="text-center text-white">
-                    <h1 class="display-4 fw-bolder">Shop in style</h1>
-                    <p class="lead fw-normal text-white-50 mb-0">With this shop hompeage template</p>
+                    <h1 class="display-4 fw-bolder">E-Book</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Website Dalam Tahap Pengerjaan</p>
                 </div>
             </div>
         </header>
