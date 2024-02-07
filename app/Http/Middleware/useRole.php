@@ -18,6 +18,6 @@ class useRole
         if(Auth()->user()->role == 'admin' || auth()->user()->role == 'petugas'){
             return $next($request);
         }
-        return redirect('/');
+        return redirect('/dashboard');
     }
 }

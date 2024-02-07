@@ -2,7 +2,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+<section>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <div class="content-header">
@@ -20,7 +20,45 @@
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
-    <div class="card-body p-0">
+    <div class="container">
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">Username</th>
+                <th scope="col">Nama Lengkap</th>
+                <th scope="col">Email</th>
+                <th scope="col">Alamat</th>
+                <th scope="col">Role</th>
+              </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+              <tr>
+                <th scope="row">{{ $user->username }}</th>
+                <td>{{ $user->nama_lengkap }}</td>
+                <td>{{ $user->email }}</td>
+                <td>{{ $user->alamat }}</td>
+                <td>{{ $user->role }}</td>
+                <td>
+                    <a class="btn btn-info btn-sm" href="{{ route('users.edit', $user->id) }}" method="GET">
+                    <i class="fas fa-pencil-alt">
+                    </i>
+                    Edit
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="{{ route('users.destroy', $user->id) }}" method="POST">
+                     @csrf
+                        @method('DELETE')
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                    </a>
+                </td>
+              </tr>
+@endforeach
+            </tbody>
+          </table>
+    </div>
+    {{-- <div class="card-body p-0">
         <table class="table table-striped projects">
             <thead>
                 <tr>
@@ -64,6 +102,8 @@
                         </a>
                     </td>
                 </tr>
-                @endforeach
+                <
+                @endforeach --}}
+
 </section>
 @endsection
